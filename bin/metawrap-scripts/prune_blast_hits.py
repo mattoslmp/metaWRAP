@@ -1,6 +1,5 @@
 #!/usr/bin/env python2.7
 import sys
-
 #load in nodes.dmp
 ranks={}
 for line in open(sys.argv[1]):
@@ -8,7 +7,7 @@ for line in open(sys.argv[1]):
 	ranks[cut[0]]=cut[4]
 
 include=set(["species", "genus", "family", "order", "class", "phylum", "superkingdom"])
-
+#exclude=["no rank", "subspecies", "species group", "varietas", "forma", "subfamily", "cohort"]
 #prune blast output to remove mappings without a rank and remove taxid columnn
 for  line in open(sys.argv[2]):
 	cut=line.strip().split('\t')
